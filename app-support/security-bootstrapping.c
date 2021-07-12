@@ -112,6 +112,7 @@ on_sec_boot_sign_on_interest_timeout (void* userdata)
 void
 on_cert_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 {
+  (void) userdata;
   // parse received data
   ndn_data_t data;
   if (ndn_data_tlv_decode_hmac_verify(&data, raw_data, data_size, m_sec_boot_state.pre_shared_hmac_key) != NDN_SUCCESS) {
@@ -300,6 +301,7 @@ sec_boot_send_cert_interest()
 void
 on_sign_on_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 {
+  (void) userdata;
   // parse received data
   ndn_data_t data;
   if (ndn_data_tlv_decode_hmac_verify(&data, raw_data, data_size, m_sec_boot_state.pre_shared_hmac_key) != NDN_SUCCESS) {

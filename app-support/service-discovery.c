@@ -350,6 +350,7 @@ sd_add_interested_service(uint8_t service_id)
 int
 _on_sd_interest(const uint8_t* raw_int, uint32_t raw_int_size, void* userdata)
 {
+  (void) userdata;
   if (m_is_my_own_sd_int) {
     return NDN_FWD_STRATEGY_MULTICAST;
   }
@@ -460,6 +461,7 @@ _on_sd_interest(const uint8_t* raw_int, uint32_t raw_int_size, void* userdata)
 void
 _on_query_or_sd_meta_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 {
+  (void) userdata;
   ndn_data_t data;
   if (ndn_data_tlv_decode_digest_verify(&data, raw_data, data_size)) {
     NDN_LOG_ERROR("Decoding failed.\n");

@@ -8,6 +8,7 @@
  * See AUTHORS.md for complete list of NDN-LITE authors and contributors.
  */
 
+#include <stddef.h>
 #include "ndn-lite-default-rng-impl.h"
 #include "../ndn-lite-rng.h"
 #include "../../ndn-error-code.h"
@@ -15,7 +16,9 @@
 /* always fails and return 0 */
 static int ndn_lite_default_rng(uint8_t *dest, unsigned size)
 {
-    return 0;
+  (void) dest, size;
+
+  return 0;
 }
 
 void

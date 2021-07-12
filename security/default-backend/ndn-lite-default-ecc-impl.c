@@ -147,6 +147,8 @@ ndn_lite_default_ecdsa_verify(const uint8_t* input_value, uint32_t input_size,
     return NDN_SEC_WRONG_KEY_SIZE;
   if (ecdsa_type != NDN_ECDSA_CURVE_SECP256R1)
     return NDN_SEC_UNSUPPORT_CRYPTO_ALGO;
+  if (input_size == 0)
+    return NDN_SEC_WRONG_INPUT_SIZE;
 
   uint8_t raw_sig_temp_buf[NDN_SEC_ECC_SECP256R1_PUBLIC_KEY_SIZE];
   uint32_t decoded_raw_signature_size;
@@ -176,6 +178,8 @@ ndn_lite_default_ecdsa_sign(const uint8_t* input_value, uint32_t input_size,
     return NDN_SEC_WRONG_KEY_SIZE;
   if (ecdsa_type != NDN_ECDSA_CURVE_SECP256R1)
     return NDN_SEC_UNSUPPORT_CRYPTO_ALGO;
+  if (input_size == 0)
+    return NDN_SEC_WRONG_INPUT_SIZE;
 
   uint32_t signature_size = NDN_SEC_ECC_SECP256R1_PUBLIC_KEY_SIZE;
   int ecc_sign_result = 0;

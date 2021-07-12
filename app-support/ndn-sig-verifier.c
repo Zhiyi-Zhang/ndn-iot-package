@@ -118,6 +118,7 @@ sig_verifier_on_timeout(void* userdata)
 int
 sig_verifier_on_interest(const uint8_t* raw_int, uint32_t raw_int_size, void* userdata)
 {
+  (void) userdata;
   ndn_interest_t interest;
   ndn_interest_from_block(&interest, raw_int, raw_int_size);
   NDN_LOG_DEBUG("[SIGVERIFIER] SigVerifier received certificate fetching Interest: ");

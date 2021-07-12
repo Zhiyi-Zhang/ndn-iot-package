@@ -175,6 +175,7 @@ _match_pub_topic(uint8_t service, bool is_cmd)
 void
 _on_sub_timeout(void* userdata)
 {
+  (void) userdata;
   NDN_LOG_INFO("[PUB/SUB] Subscription Interest Timeout");
 }
 
@@ -293,6 +294,7 @@ _on_new_content_verify_success(ndn_data_t* data, void* userdata)
 void
 _on_new_content_verify_failure(ndn_data_t* data, void* userdata)
 {
+  (void) userdata;
   NDN_LOG_INFO("[PUB/SUB] New published content cannot pass signature verification. Drop...");
   NDN_LOG_INFO_NAME(&data->name);
 }

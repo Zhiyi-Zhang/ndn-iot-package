@@ -11,7 +11,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_definitions(-D_GNU_SOURCE)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -Werror -Wno-format -Wno-int-to-void-pointer-cast -Wno-int-to-pointer-cast")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -Werror -Wno-format -Wno-int-to-pointer-cast -Wunused-parameter -Wunused-variable")
 set(CMAKE_C_FLAGS_DEBUG "-O0 -ggdb")
 set(CMAKE_C_FLAGS_RELEASE "-O3")
 

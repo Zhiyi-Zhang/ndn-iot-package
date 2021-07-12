@@ -102,6 +102,7 @@
 #define NDN_SEC_INIT_FAILURE -28
 #define NDN_SEC_FAIL_VERIFY_SIG -29
 #define NDN_SEC_SIGNED_INTEREST_INVALID_DIGEST -30
+#define NDN_SEC_WRONG_INPUT_SIZE -31
 /* @} */
 
 /** @defgroup NDNErrorCodeFragmentation Fragmentation Errors

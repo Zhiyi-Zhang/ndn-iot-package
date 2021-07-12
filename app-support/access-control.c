@@ -137,6 +137,7 @@ _ac_timeout()
 int
 _on_ac_notification(const uint8_t* interest, uint32_t interest_size, void* userdata)
 {
+  (void) userdata;
   ndn_interest_t notification;
   ndn_interest_from_block(&notification, interest, interest_size);
   // /[home-prefix]/NDN_SD_AC/NOTIFY/[service-id]/keyid
@@ -171,6 +172,7 @@ _on_ac_notification(const uint8_t* interest, uint32_t interest_size, void* userd
 void
 _on_ekey_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 {
+  (void) userdata;
   // parse Data
   ndn_data_t data;
   int ret = -1;
@@ -270,6 +272,7 @@ _on_ekey_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 void
 _on_dkey_data(const uint8_t* raw_data, uint32_t data_size, void* userdata)
 {
+  (void) userdata;
   // parse Data
   ndn_data_t data;
   int ret = -1;

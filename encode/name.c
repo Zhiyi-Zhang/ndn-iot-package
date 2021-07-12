@@ -249,7 +249,7 @@ ndn_name_compare_block(const uint8_t* lhs_block_value, uint32_t lhs_block_size,
   ndn_decoder_t lhs_decoder, rhs_decoder;
   decoder_init(&lhs_decoder, lhs_block_value, lhs_block_size);
   decoder_init(&rhs_decoder, rhs_block_value, rhs_block_size);
-  uint32_t probe, retval = 0;
+  uint32_t probe = 0, retval = 0;
 
   /* check left name type */
   decoder_get_type(&lhs_decoder, &probe);

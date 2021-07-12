@@ -90,10 +90,12 @@ void msgproc(void *self, size_t param_length, void *param) {
 }
 
 void dummy_msgproc(void *self, size_t param_length, void *param){
+  (void) self, param_length, param;
   ret = true;
 }
 
 void add_msgproc(void *self, size_t param_length, void *param){
+  (void) param_length;
   ulret += *(uint32_t*)param;
   ndn_msgqueue_post(self, add_msgproc, sizeof(uint32_t), &ulret);
 }

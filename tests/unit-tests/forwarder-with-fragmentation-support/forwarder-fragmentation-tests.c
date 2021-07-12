@@ -54,6 +54,7 @@ static bool ff_forwarder_put_data_received = false;
 
 void ff_on_data_callback(const uint8_t *data, uint32_t data_size, void *userdata)
 {
+  (void) userdata;
   ndn_data_t data_check;
   ndn_ecc_pub_t pub_key;
   int result = ndn_ecc_pub_init(&pub_key, test_ecc_secp256r1_public_raw_1, sizeof(test_ecc_secp256r1_public_raw_1),

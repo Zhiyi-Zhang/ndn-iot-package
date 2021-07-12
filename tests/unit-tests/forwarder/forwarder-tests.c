@@ -47,6 +47,7 @@ int test_sign_data(const char* id, uint32_t id_len, ndn_encoder_t* encoder, ndn_
 
 void on_data_callback(const uint8_t *data, uint32_t data_size, void *userdata)
 {
+  (void) userdata;
   //printf("application receives a Data\n");
   ndn_data_t data_check;
   ndn_ecc_pub_t pub_key;
@@ -376,6 +377,7 @@ static bool forwarder_put_data_received = false;
 
 void on_data_callback2(const uint8_t *data, uint32_t data_size, void *userdata)
 {
+  (void) userdata;
   ndn_data_t data_check;
   ndn_ecc_pub_t pub_key;
   int result = ndn_ecc_pub_init(&pub_key, _forwarder_test_raw_pub_key_arr, _forwarder_test_raw_pub_key_arr_len,
